@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'my-app',
@@ -11,8 +12,29 @@ export class AppComponent {
   movieTitle: string;
   moviePlot: string;
 
-  constructor() {
+  movieGenre: string[];
+  criticRating: string;
+  mpaaRating: string;
+
+  constructor(private apiService: ApiService) {
     this.movieTitle = '';
     this.moviePlot = '';
+  }
+
+  // this function is called when the "Search Movies" button is clicked
+  submitSearch() {
+    console.log('Form Submitted --> ' + this.movieTitle);
+
+    this.apiService
+      .retrieveMovieData(this.movieTitle)
+      .subscribe((apiResponse: any) => {
+        console.log(apiResponse);
+
+        this.mpaaRating = apiResponse['Rated'];
+        this.movieGenre = apiResponse['Genre'];
+        this.criticRating = this.apiService.parseCriticScores(
+          apiResponse['Ratings']
+        );
+      });
   }
 }

@@ -1,16 +1,16 @@
 <!-- Put the components up here. Each will be a card -->
 <div class="container-fluid">
   <div class="row">
-    <app-critic-score class="col"></app-critic-score>
+    <app-critic-score class="col" [criticScore]="criticRating"></app-critic-score>
 
-    <app-genre class="col"></app-genre>
+    <app-genre class="col" [movieGenres]="movieGenre"></app-genre>
 
-    <app-mpaa-rating class="col"></app-mpaa-rating>
+    <app-mpaa-rating class="col" [movieRating]="mpaaRating"></app-mpaa-rating>
   </div>
 
   <div class="form-container text-center">
     <label for="movie-title" class="form-label">Enter a Movie Title:</label>
-    <div class="input-group mb-3 w-75 m-auto">
+    <div class="input-group mb-3 w-50 m-auto">
       <input
         id="movie-title"
         type="text"
@@ -27,7 +27,7 @@
       <span>Movie to Search: </span> <span>{{movieTitle}}</span>
     </div>
 
-    <button type="button" class="btn btn-primary">Search Movies</button>
+    <button type="button" class="btn btn-primary" (click)="submitSearch()">Search Movies</button>
 
     <div id="plotContainer">
       <span>{{moviePlot}}</span>

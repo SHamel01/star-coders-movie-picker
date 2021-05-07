@@ -6,15 +6,18 @@ import { AppComponent } from './app.component';
 import { CriticScoreComponent } from './critic-score/critic-score.component';
 import { GenreComponent } from './genre/genre.component';
 import { MpaaRatingComponent } from './mpaa-rating/mpaa-rating.component';
+import { ApiService } from './api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   declarations: [
     AppComponent,
     GenreComponent,
     MpaaRatingComponent,
     CriticScoreComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ApiService]
 })
 export class AppModule {}

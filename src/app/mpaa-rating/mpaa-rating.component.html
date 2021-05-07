@@ -1,3 +1,16 @@
-<p *ngIf="showMessage" >
-  DTCC Star Coders {{year}}!
-</p>
+<div class="card m-4">
+  <div class="card-header">
+    <span> -- </span>
+  </div>
+  <div class="card-body">
+
+    <div>
+      <span>Choose a Maximum Rating</span>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="preferredRating">
+        <option *ngFor="let option of POSSIBLE_RATINGS" value="{{option}}">{{option}}</option>
+      </select>
+    </div>
+
+
+  </div>
+</div>
