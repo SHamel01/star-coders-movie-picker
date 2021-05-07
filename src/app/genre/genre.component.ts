@@ -12,7 +12,7 @@ export class GenreComponent implements OnInit, OnChanges {
 
   constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   ngOnChanges() {
     console.log(this.movieGenres);

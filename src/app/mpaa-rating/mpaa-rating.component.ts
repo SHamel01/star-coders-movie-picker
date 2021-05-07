@@ -29,12 +29,12 @@ export class MpaaRatingComponent implements OnInit, OnChanges {
 
   checkRating() {
     const maxRatingIndex = this.POSSIBLE_RATINGS.indexOf(this.preferredRating);
-
     if (this.POSSIBLE_RATINGS.indexOf(this.movieRating) > maxRatingIndex) {
       this.isGoodRating = false;
-      console.log('Good MPAA Rating? : ' + this.isGoodRating);
     } else {
       this.isGoodRating = true;
     }
+
+    console.log('Good MPAA Rating? : ' + this.isGoodRating);
   }
 }
