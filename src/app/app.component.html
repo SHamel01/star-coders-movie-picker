@@ -1,0 +1,36 @@
+<!-- Put the components up here. Each will be a card -->
+<div class="container-fluid">
+  <div class="row">
+    <app-critic-score class="col"></app-critic-score>
+
+    <app-genre class="col"></app-genre>
+
+    <app-mpaa-rating class="col"></app-mpaa-rating>
+  </div>
+
+  <div class="form-container text-center">
+    <label for="movie-title" class="form-label">Enter a Movie Title:</label>
+    <div class="input-group mb-3 w-75 m-auto">
+      <input
+        id="movie-title"
+        type="text"
+        class="form-control"
+        id="basic-url"
+        aria-describedby="basic-addon3"
+        [(ngModel)]="movieTitle"
+      />
+    </div>
+  </div>
+
+  <div class="results-container text-left p-2">
+    <div class="py-4">
+      <span>Movie to Search: </span> <span>{{movieTitle}}</span>
+    </div>
+
+    <button type="button" class="btn btn-primary">Search Movies</button>
+
+    <div id="plotContainer">
+      <span>{{moviePlot}}</span>
+    </div>
+  </div>
+</div>
