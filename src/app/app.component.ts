@@ -52,6 +52,8 @@ export class AppComponent {
           );
           // and we show the Watch/Don't Watch message
           this.showMessage = true;
+
+          this.moviePlot = apiResponse['Plot']
         } else {
           // if the request is not successful, we show the error message
           this.error = true;
